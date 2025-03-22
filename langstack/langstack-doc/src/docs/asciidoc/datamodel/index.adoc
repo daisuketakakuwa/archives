@@ -1,0 +1,30 @@
+== データモデル
+
+[plantuml]
+----
+left to right direction
+hide circle
+skinparam linetype ortho
+
+rectangle Card {
+    entity Card {
+        ID
+        --
+        TITLE
+        CONTENT
+        IMAGE_URL
+        POST_DATE
+    }
+    Card }o.. Genre
+}
+
+rectangle Genre {
+    entity Genre {
+        ID
+        --
+        NAME
+    }
+}
+
+
+----

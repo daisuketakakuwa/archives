@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  dbms:
+    # バージョンを指定する場合は「postgres: latest」のように書く
+    image: postgres
+    # restartオプション
+    # ・no（再起動しない：デフォルト）
+    # ・always（明示的にstopされない限り、終了したら常に再起動する）
+    # ・on-failure（プロセスが0以外で終了(=異常終了)した場合、最大:max-entriesの数分だけ再起動を行う）
+    restart: always
+    # docker-compose.ymlと同階層にある.envファイルより環境変数を読み込む
+    environment:
+      TZ: ${OS_TIMEZONE}
+      # 同名の「SUPERUSER」「データベース」を作成する
+      # BUT PostgreSQLでは「postgres」という名のSUPERUSERがいないと
+      # 「FATAL：role "postgres" does not exist」というエラーが出力され続ける
+      POSTGRES_USER: ${POSTGRES_USER}
+      # 「POSTGRES_USER」のパスワードとなる
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    # コンテナが起動しているか定期的に実行するコマンド
+    healthcheck:
+      # 定期的に実行するコマンド
+      test: ["CMD-SHELL", "pg_isready -d postgres -U postgres"]
+      interval: 10s
+      timeout: 10s
+      retries: 5

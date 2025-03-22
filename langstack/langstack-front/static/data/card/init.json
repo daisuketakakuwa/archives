@@ -1,0 +1,100 @@
+{
+  "theLastFiveCards": [
+    {
+      "title": "SEX_EDUCATION 001",
+      "content": "THIS IS LINE1.\nTHIS IS LINE2.\nTHIS IS LINE3.\nTHIS IS LINE4.\nTHIS IS LINE5.\nTHIS IS LINE6.\nTHIS IS LINE7.\nTHIS IS LINE8.\nTHIS IS LINE9.\nTHIS IS LINE10.\nTHIS IS LINE11.\nTHIS IS LINE12.\nTHIS IS LINE13.\nTHIS IS LINE14.\nTHIS IS LINE15.\nTHIS IS LINE16.\nTHIS IS LINE17.\nTHIS IS LINE18.\nTHIS IS LINE19.\nTHIS IS LINE20.",
+      "imageUrl": "/data/card/genre_001/card_001.jpg",
+      "postDate": "2021/11/01",
+      "genre": {
+        "id": "genre001",
+        "name": "SEX EDUCATION"
+      }
+    },
+    {
+      "title": "SEX_EDUCATION 002",
+      "content": "CONTENT2",
+      "imageUrl": "/data/card/genre_001/card_002.jpg",
+      "postDate": "2021/11/01",
+      "genre": {
+        "id": "genre001",
+        "name": "SEX EDUCATION"
+      }
+    },
+    {
+      "title": "SEX_EDUCATION 003",
+      "content": "CONTENT3",
+      "imageUrl": "/data/card/genre_001/card_003.jpg",
+      "postDate": "2021/11/01",
+      "genre": {
+        "id": "genre001",
+        "name": "SEX EDUCATION"
+      }
+    },
+    {
+      "title": "SEX_EDUCATION 004",
+      "content": "CONTENT4",
+      "imageUrl": "/data/card/genre_001/card_004.jpg",
+      "postDate": "2021/11/01",
+      "genre": {
+        "id": "genre001",
+        "name": "SEX EDUCATION"
+      }
+    },
+    {
+      "title": "SEX_EDUCATION 005",
+      "content": "CONTENT5",
+      "imageUrl": "/data/card/genre_001/card_005.jpg",
+      "postDate": "2021/11/01",
+      "genre": {
+        "id": "genre001",
+        "name": "SEX EDUCATION"
+      }
+    }
+  ],
+
+  "theLastFiveDaysActivity": [
+    {
+      "postDate": "2021/11/05",
+      "cards": 35
+    },
+    {
+      "postDate": "2021/11/04",
+      "cards": 10
+    },
+    {
+      "postDate": "2021/11/03",
+      "cards": 6
+    },
+    {
+      "postDate": "2021/11/02",
+      "cards": 3
+    },
+    {
+      "postDate": "2021/11/01",
+      "cards": 15
+    }
+  ],
+  "allGenres": [
+    {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    },
+    {
+      "id": "genre002",
+      "name": "FRIENDS"
+    },
+    {
+      "id": "genre003",
+      "name": "文法"
+    },
+    {
+      "id": "genre004",
+      "name": "単語"
+    },
+    {
+      "id": "genre005",
+      "name": "句動詞"
+    }
+  ],
+  "allCardCount": 123
+}

@@ -1,0 +1,28 @@
+{
+  "name": "langstack-front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "stub":  "yarn config-stub  && nuxt",
+    "local": "yarn config-local && nuxt",
+    "build": "nuxt build",
+    "config-stub": "yarn ncopy static/config/config-stub.json static/config/config.json",
+    "config-local": "yarn ncopy static/config/config-local.json static/config/config.json",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "ncopy": "node -e \"require('fs').copyFileSync(process.argv[1], process.argv[2])\""
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "nuxt-property-decorator": "^2.9.1",
+    "vue2-touch-events": "^3.2.2",
+    "vuetify": "^2.5.5"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/vuetify": "^1.12.1"
+  }
+}

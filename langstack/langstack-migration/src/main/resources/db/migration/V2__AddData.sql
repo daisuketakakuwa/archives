@@ -1,0 +1,33 @@
+/* genre */
+INSERT INTO genre VALUES ('genreId001','GENRE001');
+INSERT INTO genre VALUES ('genreId002','GENRE002');
+INSERT INTO genre VALUES ('genreId003','GENRE003');
+
+/* card */
+INSERT INTO card VALUES ('cardId001','THE OFFICE epi001','aiueo','画像URL','2021-01-01','genreId001');
+INSERT INTO card VALUES ('cardId002','THE OFFICE epi002','CONTENT002','画像URL','2021-02-02','genreId001');
+INSERT INTO card VALUES ('cardId003','THE OFFICE epi003','CONTENT003','画像URL','2021-03-03','genreId001');
+INSERT INTO card VALUES ('cardId004','THE OFFICE epi004','CONTENT004','画像URL','2021-04-04','genreId001');
+INSERT INTO card VALUES ('cardId005','THE OFFICE epi005','CONTENT005','画像URL','2021-05-05','genreId001');
+INSERT INTO card VALUES ('cardId006','THE OFFICE epi006','CONTENT006','画像URL','2021-06-06','genreId001');
+INSERT INTO card VALUES ('cardId007','THE OFFICE epi007','CONTENT007','画像URL','2021-07-07','genreId001');
+INSERT INTO card VALUES ('cardId008','THE OFFICE epi008','CONTENT008','画像URL','2021-08-08','genreId001');
+INSERT INTO card VALUES ('cardId009','THE OFFICE epi009','CONTENT009','画像URL','2021-09-09','genreId001');
+
+INSERT INTO card VALUES ('cardId010','FRIENDS epi001','aiueo','画像URL','2021-11-06','genreId002');
+INSERT INTO card VALUES ('cardId011','FRIENDS epi002','CONTENT011','画像URL','2021-11-06','genreId002');
+INSERT INTO card VALUES ('cardId012','FRIENDS epi003','CONTENT012','画像URL','2021-11-06','genreId002');
+INSERT INTO card VALUES ('cardId013','FRIENDS epi004','CONTENT013','画像URL','2021-11-06','genreId002');
+INSERT INTO card VALUES ('cardId014','FRIENDS epi005','CONTENT014','画像URL','2021-11-06','genreId002');
+
+INSERT INTO card VALUES ('cardId015','文法001','aiueo','画像URL','2021-11-04','genreId002');
+INSERT INTO card VALUES ('cardId016','文法002','CONTENT016','画像URL','2021-11-04','genreId002');
+
+INSERT INTO card VALUES ('cardId017','単語001','CONTENT017','画像URL','2021-11-03','genreId002');
+INSERT INTO card VALUES ('cardId018','単語002','aiueo','画像URL','2021-11-03','genreId003');
+INSERT INTO card VALUES ('cardId019','単語003','CONTENT019','画像URL','2021-11-03','genreId003');
+
+INSERT INTO card VALUES ('cardId020','句動詞001','aiueo','画像URL','2021-11-01','genreId003');
+INSERT INTO card VALUES ('cardId021','句動詞002','CONTENT021','画像URL','2021-11-01','genreId003');
+INSERT INTO card VALUES ('cardId022','句動詞003','CONTENT022','画像URL','2021-11-01','genreId003');
+INSERT INTO card VALUES ('cardId023','句動詞004','CONTENT023','画像URL','2021-11-01','genreId003');

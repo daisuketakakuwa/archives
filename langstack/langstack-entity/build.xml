@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="langstack" default="hbm2java" basedir=".">
+
+  <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpath="${maven.compile.classpath}"/>
+
+  <!-- 子要素に紐づくメソッドの種類
+    1. addXxxxxx() add移行は頭文字以外全て小文字。✕引数のインスタンスに各属性値はまだ入ってない。
+    2. addConfiguredXxxxx() addConfigured移行は全て小文字。〇引数のインスタンスに各属性値が入ってる状態。
+    3. createXxxxx() 引数無し。メソッド内でnew Xxxxx()して用意。各属性値の設定はexecute()実行直前で行われる。
+   -->
+
+  <target name="hbm2java">
+    <hibernatetool destdir="${project.build.sourceDirectory}" templatepath="${basedir}/src/tools/resources">
+
+      <!-- ２．対象DB設定 -->
+      <!-- createJDBCConfiguration()が呼び出される。返されるインスタンスは必ずしも「JdbcConfiguration」という名前である必要はない -->
+      <!-- が、ここではJdbcConfigurationインスタンスが返されている-->
+      <!-- packagename・revengfile・reversestarategyは、setXxxxx()でインスタンスにセットされる。 -->
+      <jdbcconfiguration packagename="package.name" revengfile="${basedir}/hibernate.reveng.xml" propertyFile="${project.build.directory}/hibernate.reveng.properties" reversestrategy="jp.langstack.reverse.jpa.CustomReverseEngineeringStrategy" />
+
+      <!-- Hbm2JavaExporterTask【JavaExporter extends GenericExporterが実行対象】の追加 -->
+      <!-- JavaExporter ... GenericExporterでは指定する必要のあるtemplateName,filePatternが -->
+      <!--                  JavaExportでは既定値があるからこちらで指定不要！ -->
+      <hbm2java jdk5="true" ejb3="true"/>
+
+    </hibernatetool>
+    <fixcrlf srcdir="${project.build.sourceDirectory}" eol="lf" eof="asis" encoding="UTF-8"/>
+  </target>
+
+</project>

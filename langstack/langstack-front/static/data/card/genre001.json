@@ -1,0 +1,52 @@
+[
+  {
+    "title": "SEX_EDUCATION 001",
+    "content": "CONTENT1",
+    "imageUrl": "/data/card/genre_001/card_001.jpg",
+    "postDate": "2021/11/01",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  },
+  {
+    "title": "SEX_EDUCATION 002",
+    "content": "CONTENT2",
+    "imageUrl": "/data/card/genre_001/card_002.jpg",
+    "postDate": "2021/11/01",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  },
+  {
+    "title": "SEX_EDUCATION 003",
+    "content": "CONTENT3",
+    "imageUrl": "/data/card/genre_001/card_003.jpg",
+    "postDate": "2021/11/01",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  },
+  {
+    "title": "SEX_EDUCATION 004",
+    "content": "CONTENT4",
+    "imageUrl": "/data/card/genre_001/card_004.jpg",
+    "postDate": "2021/11/01",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  },
+  {
+    "title": "SEX_EDUCATION 005",
+    "content": "CONTENT5",
+    "imageUrl": "/data/card/genre_001/card_005.jpg",
+    "postDate": "2021/11/01",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  }
+]

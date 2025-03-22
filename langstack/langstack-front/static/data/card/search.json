@@ -1,0 +1,32 @@
+[
+  {
+    "title": "SEX_EDUCATION 1-1 04:24",
+    "content": "CONTENT1",
+    "imageUrl": "/data/card/genre_001/card_001.jpg",
+    "postDate": "2021/11/01",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  },
+  {
+    "title": "SEX_EDUCATION 1-2 01:20",
+    "content": "CONTENT2",
+    "imageUrl": "/data/card/genre_001/card_002.jpg",
+    "postDate": "2021/11/02",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  },
+  {
+    "title": "SEX_EDUCATION 1-3 07:44",
+    "content": "CONTENT3",
+    "imageUrl": "/data/card/genre_001/card_003.jpg",
+    "postDate": "2021/11/03",
+    "genre": {
+      "id": "genre001",
+      "name": "SEX EDUCATION"
+    }
+  }
+]

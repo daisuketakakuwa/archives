@@ -1,0 +1,5 @@
+= アーキテクチャ
+
+include::infra/index.adoc[]
+
+include::datamodel/index.adoc[]

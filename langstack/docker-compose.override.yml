@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  dbms:
+    # docker-compose.ymlにportsを定義してあげてもOK
+    # ポートのマッピング定義だけoverrideファイルに外だしして見やすくしているだけ
+    ports:
+      # コンテナ外 → 中で開いているポートに対する紐づけ
+      - ${POSTGRES_PORT}:5432

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jp.langstack</groupId>
+    <artifactId>langstack-migration</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 親の設定をしないとプロパティ引き継げない -->
+    <parent>
+        <groupId>jp.langstack</groupId>
+        <artifactId>langstack</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <!-- plugin経由でflyaway使ってみる -->
+            <!-- 実行コマンド【mvn flyway:migrate】 -->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.0.1</version>
+                <configuration>
+                    <url>${db.jdbc.url}</url>
+                    <user>${db.username}</user>
+                    <password>${db.password}</password>
+                </configuration>
+                <!-- 必要なDBドライバを定義する  -->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>42.2.23</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jp.langstack</groupId>
+    <artifactId>langstack-entity</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 親の設定をしないとプロパティ引き継げない -->
+    <parent>
+        <groupId>jp.langstack</groupId>
+        <artifactId>langstack</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-tools</artifactId>
+            <version>5.3.20.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>${db.jdbc.groupId}</groupId>
+            <artifactId>${db.jdbc.artifactId}</artifactId>
+            <version>${db.jdbc.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <!-- packaing:jarのdefaultライフサイクルにて、フェーズ「process-resouces に maven-resources-plugin:resourceゴールが紐づいている -->
+        <!-- なので、plugin定義不要 → process-resoucesフェーズをdefaultGoalに指定するだけでいける -->
+        <!-- defaultGoalには「ゴールorフェーズ」を指定可能 -->
+        <defaultGoal>clean process-resources compile antrun:run</defaultGoal>
+        <!-- defaultのprocess-resourcesの設定(src/main/resources→${project.build.directory})でOKなら<resources>の定義も不要 -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <targetPath>${project.build.directory}</targetPath>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <configuration>
+                    <target>
+                        <!-- Antではパス定義したものにIDを割り当てて別の場所からrefid属性で参照できる -->
+                        <!-- 参考：https://miyohide.hatenablog.com/entry/20080506/1210035794 -->
+                        <property name="maven.compile.classpath" refid="maven.compile.classpath" />
+                        <ant antfile="./build.xml" />
+                    </target>
+                </configuration>
+            </plugin>
+
+            <!-- src/main/java・src/test/javaに加えてソースフォルダを追加するプラグイン -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>add-tools-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/tools/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
